@@ -37,13 +37,6 @@ super_cats = (
 super_cat_labels = ('ground', 'vertical', 'celiing', 'furnitures', 'objects')
 
 with NyuLoader('v2') as loader:
-    # names = list(loader.label_names)
-    # names.sort()
-    # for n in names:
-    #     if n[0] == 'r':
-    #         print(n)
-    print(loader.split('test'))
-    exit()
     mapper = label_mapper(loader.label_names, super_cats)
     for i in range(len(loader)):
         example = loader.get_example(i)
