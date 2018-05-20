@@ -135,7 +135,7 @@ class NyuLoader(object):
             key = 'testNdxs'
         else:
             raise ValueError('Unsupported mode "%s"' % mode)
-        return self._split[key][:, 0]
+        return np.squeeze(self._split[key], axis=-1) - 1
 
     def get_example(self, index):
         return NyuExample(self, index)
